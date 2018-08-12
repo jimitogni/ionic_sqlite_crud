@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Meus Gastos - ETEC 3º TI</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h2>Editar dados</h2>
+  <form (ngSubmit)="atualizaData()">
+    <ion-item>
+      <ion-label>Data</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dados.data" name="data" required=""></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo</ion-label>
+      <ion-select [(ngModel)]="dados.tipo" name="tipo" required="">
+        <ion-option value="Receita">Receita</ion-option>
+        <ion-option value="Despesa">Despesa</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descrição</ion-label>
+      <ion-input type="text" placeholder="Descrição" [(ngModel)]="dados.descricao" name="descricao" required="" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Valor</ion-label>
+      <ion-input type="number" placeholder="Valor" [(ngModel)]="dados.saldo" name="saldo" required="" ></ion-input>
+    </ion-item>
+    <ion-input type="hidden" [(ngModel)]="dados.id" name="id"></ion-input>
+    <button ion-button type="submit" block>Atualizar dados</button>
+  </form>
+</ion-content>
